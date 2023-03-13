@@ -9,8 +9,6 @@ export function minNumberOfHours(initialEnergy: number, initialExperience: numbe
     if (needTotalEnergy >= initialEnergy) {
         totalHour += needTotalEnergy - initialEnergy + 1
     }
-
-    debugger
     
     // 2.处理需要的经验
     let finalExperience = initialExperience
@@ -25,5 +23,3 @@ export function minNumberOfHours(initialEnergy: number, initialExperience: numbe
 
     return totalHour
 };
-
-minNumberOfHours(5, 3, [1, 4], [2, 5])
