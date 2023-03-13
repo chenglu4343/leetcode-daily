@@ -13,7 +13,7 @@
         "<node_internals>/**"
       ],
       "runtimeArgs": ["-r", "ts-node/register"],
-      "program": "${workspaceFolder}/src/23/3/12.ts",
+      "program": "${workspaceFolder}/src/23/3/13/index.ts",
     }
   ]
 }
