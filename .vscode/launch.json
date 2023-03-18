@@ -8,12 +8,12 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "run ts file",
+      "name": "debug ts",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "runtimeArgs": ["-r", "ts-node/register"],
-      "program": "${workspaceFolder}/src/23/3/16/index.ts",
+      "program": "${workspaceFolder}/src/23/3/18/index.ts",
     }
   ]
 }
