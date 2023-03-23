@@ -8,7 +8,7 @@ describe('23-3-22', () => {
         expect(answer).toBe(34)
     })
 
-    it.only('example-2', () => {
+    it('example-2', () => {
         const answer = bestTeamScore([4,5,6,5], [2,1,2,1])
 
         expect(answer).toBe(16)
