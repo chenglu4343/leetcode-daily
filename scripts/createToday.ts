@@ -2,8 +2,13 @@
 import fs from 'fs-extra';
 import path from 'path';
 import dayjs from 'dayjs';
+import { num2En, num2MonthEn } from './constant';
 
-const today = dayjs().format('YY/M/D');
+const today = dayjs()
+  .format('YY/M/D')
+  .split('/')
+  .map((item, index) => index === 1 ? num2MonthEn[item] : num2En[item])
+  .join('/');
 const srcDir = path.join(__dirname, '..', 'src', today);
 const templateDir = path.join(__dirname, 'template');
 
