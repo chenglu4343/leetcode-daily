@@ -8,5 +8,7 @@ impl Solution {
 
 #[test]
 fn test_is_robot_bounded() {
-    assert_eq!(Solution::add_two(2), 4);
+    let expected = 4;
+    let actual = Solution::add_two(2);
+    assert!(actual == expected, "Expected {:?}, but got {:?}", expected, actual);
 }
