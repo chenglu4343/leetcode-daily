@@ -11,15 +11,13 @@ impl Solution {
         let mut direction = 0;
         for instruction in instructions.chars() {
             match instruction {
-                'G' => {
-                    match direction {
-                        0 => y += 1,
-                        1 => x += 1,
-                        2 => y -= 1,
-                        3 => x -= 1,
-                        _ => (),
-                    }
-                }
+                'G' => match direction {
+                    0 => y += 1,
+                    1 => x += 1,
+                    2 => y -= 1,
+                    3 => x -= 1,
+                    _ => (),
+                },
                 'L' => direction = (direction + 3) % 4,
                 'R' => direction = (direction + 1) % 4,
                 _ => (),
@@ -29,9 +27,31 @@ impl Solution {
     }
 }
 
-#[test]
-fn test_is_robot_bounded() {
-    let expected = true;
-    let actual = Solution::is_robot_bounded(String::from("GGLLGG"));
-    assert!(actual == expected, "Expected {:?}, but got {:?}", expected, actual);
+#[cfg(test)]
+mod test {
+    use super::*;
+
+    #[test]
+    fn test_is_robot_bounded() {
+        let expected = true;
+        let actual = Solution::is_robot_bounded(String::from("GGLLGG"));
+        assert!(
+            actual == expected,
+            "Expected {:?}, but got {:?}",
+            expected,
+            actual
+        );
+    }
+
+    #[test]
+    fn test_is_robot_bounded2() {
+        let expected = false;
+        let actual = Solution::is_robot_bounded(String::from("GG"));
+        assert!(
+            actual == expected,
+            "Expected {:?}, but got {:?}",
+            expected,
+            actual
+        );
+    }
 }
